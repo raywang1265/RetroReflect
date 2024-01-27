@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<title>Loading...</title>}>
         <div className="App-container">
-          <img src="C:\Users\pikac\OneDrive\Desktop\RetroReflect\public\RetroReflect_Logo.png" alt="Logo" className="App-logo" />
+          <img src="/RetroReflectLogo.png" alt="Logo" className="App-logo" />
           <div className="Tab-container">
             <div 
               className={`Tab ${activeTab === 'login' ? 'Active-tab' : ''}`}

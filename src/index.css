@@ -23,16 +23,16 @@ body, html {
 
 .App-logo {
   position: absolute;
-  top: 10px;
+  top: 0px;
   left: 10px;
-  width: 100px; /* Adjust based on your logo size */
+  width: 200px; /* Adjust based on your logo size */
 }
 
 /* Tab Styles */
 
 .Tab-container {
   display: flex;
-  border-bottom: 2px solid #00008b; /* Dark blue border */
+  border-bottom: 2px solid #395375; /* Dark blue border */
   margin-bottom: 20px;
 }
 
@@ -40,14 +40,14 @@ body, html {
   padding: 10px 20px;
   margin: 0 5px;
   cursor: pointer;
-  background-color: #b0c4de; /* Light greyish blue */
+  background-color: #a3b6cf; /* Light greyish blue */
   border-radius: 5px 5px 0 0;
   border: none;
   transition: background-color 0.3s;
 }
 
 .Active-tab {
-  background-color: #00008b; /* Dark blue */
+  background-color: #395375; /* Dark blue */
   color: white;
 }
 
@@ -83,7 +83,7 @@ button {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  background-color: #00008b; /* Dark blue */
+  background-color: #395375; /* Dark blue */
   color: white;
   transition: background-color 0.3s;
 }
