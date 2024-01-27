@@ -123,3 +123,78 @@ body {
 .bottom-filler {
   background-color: #395375;
 }
+
+/*Quotes styling begins*/
+.launch-container {
+  display: grid;
+  grid-template-rows: 50px 93px 510px 1fr 77px;
+  height: 100vh;
+}
+
+.logout-button {
+  height: 50px;
+  width: 100px;
+  align-self: center;
+  border: none;
+  background-color: #395375;
+  color: white;
+  font-family: 'Inter';
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  color: #395375;
+  background-color: white;
+}
+
+.launch-img {
+  width: 475px;
+  align-self: top;
+  justify-self: center;
+}
+
+.moods {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 1fr 30px 100px 30px 100px 30px 80px 30px 100px 1fr;
+  font-family: 'Inter';
+  font-size: 18px;
+}
+
+.happy-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: yellow;
+}
+
+.neutral-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: purple;
+}
+
+.sad-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: blue;
+}
+
+.angry-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: red;
+}
+
+.buttons {
+  align-self: center;
+  justify-self: center;
+}
