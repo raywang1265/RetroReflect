@@ -22,4 +22,19 @@
   background-color: #f7f7f7;
 }
 
+.Signup-button {
+  margin-top: 10px; /* Spacing above the sign up button */
+  padding: 5px 15px;
+  background-color: #f8f8f8; /* Light background for the sign up button */
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%; /* Make the button expand to the full width */
+}
+
+.Signup-button:hover {
+  background-color: #e7e7e7; /* Color change on hover */
+}
+
 /* ... rest of your styles */

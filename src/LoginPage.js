@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import './index.css';
 
 function LoginPage() {
@@ -10,8 +10,12 @@ function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault();
     // Handle the login logic here
-    navigate("/home");
+    navigate('/home');
     console.log('Login attempt with username:', username, 'password:', password);
+  };
+
+  const handleSignupRedirect = () => {
+    navigate('/signup');
   };
 
   return (
@@ -37,6 +41,10 @@ function LoginPage() {
           />
         </div>
         <button type="submit" className="Login-button">Log In</button>
+        {/* Sign Up Button */}
+        <button type="button" className="Signup-button" onClick={handleSignupRedirect}>
+          Sign Up
+        </button>
       </form>
     </div>
   );
