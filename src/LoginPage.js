@@ -41,10 +41,6 @@ function LoginPage() {
           />
         </div>
         <button type="submit" className="Login-button">Log In</button>
-        {/* Sign Up Button */}
-        <button type="button" className="Signup-button" onClick={handleSignupRedirect}>
-          Sign Up
-        </button>
       </form>
     </div>
   );

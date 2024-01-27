@@ -1,40 +1,95 @@
-/* Add this to the existing styles in App.css */
+/* Global Styles */
 
-.App-link {
-  padding: 5px 15px;
-  background-color: #5c6bc0;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.App-link:hover {
-  background-color: #3f51b5;
-}
-
-.Login-container {
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; /* or any font-family you prefer */
+  background-color: #f0f0f0; /* Off-white background */
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7;
 }
 
-.Signup-button {
-  margin-top: 10px; /* Spacing above the sign up button */
-  padding: 5px 15px;
-  background-color: #f8f8f8; /* Light background for the sign up button */
-  color: #333;
+/* App Container and Logo */
+
+.App-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+.App-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px; /* Adjust based on your logo size */
+}
+
+/* Tab Styles */
+
+.Tab-container {
+  display: flex;
+  border-bottom: 2px solid #00008b; /* Dark blue border */
+  margin-bottom: 20px;
+}
+
+.Tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #b0c4de; /* Light greyish blue */
+  border-radius: 5px 5px 0 0;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.Active-tab {
+  background-color: #00008b; /* Dark blue */
+  color: white;
+}
+
+/* Form Container and Button Styles */
+
+.Form-container {
+  width: 300px; /* Adjust as needed */
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Form-group {
+  margin-bottom: 15px;
+}
+
+.Form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.Form-group input {
+  width: 100%;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
   cursor: pointer;
-  width: 100%; /* Make the button expand to the full width */
+  background-color: #00008b; /* Dark blue */
+  color: white;
+  transition: background-color 0.3s;
 }
 
-.Signup-button:hover {
-  background-color: #e7e7e7; /* Color change on hover */
+button:hover {
+  background-color: #3f51b5;
 }
 
-/* ... rest of your styles */
+/* Other Styles (if any) ... */
