@@ -1,9 +1,11 @@
 import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
 import './index.css';
 
 function Home() {
+    //const { user, isAuthenticated } = useAuth0
         
     return (
         <div className="home-container">

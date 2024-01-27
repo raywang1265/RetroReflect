@@ -11,7 +11,6 @@ const Quotes = () => {
                 <img src={require("./assets/RetroReflect.png")} className="logo" />
                 <div></div>
                 <div></div>
-                <LogoutButton />
             </div>
 
             <img src={require("./assets/rolodex-gif.gif")} className="launch-img" />
