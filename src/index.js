@@ -36,7 +36,7 @@ root.render(
     authorizationParams={{
       redirect_uri: window.top.location.origin,
       audience: "https://dev-gnr3nffeeis62v4i.us.auth0.com/api/v2/",
-      scope: "read:current_user update:current_user_metadata"
+      scope: "openid email profile"
     }}
   >
     <App />

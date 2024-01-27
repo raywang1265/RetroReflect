@@ -12,9 +12,6 @@ function App() {
     <div className="App">
       <div className="auth-buttons">
         {isAuthenticated ? <LogoutButton /> && <Profile /> : <LoginButton />}
-        <pre style={{textAlign: 'start'}}>
-          {JSON.stringify(user, null, 2)}
-        </pre>
       </div>
       {/* Rest of your app components */}
     </div>
