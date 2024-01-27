@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Add this to the existing styles in App.css */
+
+.App-link {
+  padding: 5px 15px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App-link:hover {
+  background-color: #3f51b5;
 }
+
+.Login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+/* ... rest of your styles */
