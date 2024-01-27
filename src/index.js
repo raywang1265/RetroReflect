@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import { createRoot } from 'react-dom/client';
 import { Auth0Provider } from '@auth0/auth0-react';
+// import { Auth0ProviderWithNavigate} from "./auth0-provider-with-navigate";
+// import {BrowserRouter} from "react-router-dom";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -41,7 +43,4 @@ root.render(
   >
     <App />
   </Auth0Provider>,
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
 );
