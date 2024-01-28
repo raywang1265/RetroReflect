@@ -34,7 +34,6 @@ function Home() {
                 <p className="home-bottom-text">Privacy Policy</p>
                 <p className="home-bottom-text">Terms and Conditions</p>
             </div>
-            <div className="bottom-filler"></div>
         </div>
     );
 

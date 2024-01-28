@@ -17,15 +17,6 @@ function App() {
     <Router>
       <div className="App">
         {/* {isAuthenticated ? <Quotes></Quotes>: <Home />} */}
-        <nav>
-          <div>
-            {isAuthenticated && <Link to="/">quotes</Link>}
-            {isAuthenticated && <Link to="/chart">chart</Link>}
-            {isAuthenticated && <Link to="/profile">Profile</Link>}
-            {isAuthenticated ? <LogoutButton /> :<> <Link to="/home"></Link></>}
-          </div>
-        </nav>
-
         {isAuthenticated ? 
           <Routes>
             <Route path="/" element={<Quotes />} />

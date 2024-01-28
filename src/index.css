@@ -26,7 +26,8 @@ body {
 .logo {
   width: 150px;
   align-self: center;
-  margin-left: 20px;
+  margin-left: 40px;
+  margin-top: 20px;
 }
 
 .signup-button {
@@ -71,7 +72,7 @@ body {
 
 .home-container {
   display: grid;
-  grid-template-rows: 50px 93px 1fr 475px 1fr 77px 1fr;
+  grid-template-rows: 50px 93px 1fr 76% 1fr 76.5px;
   height: 100%;
 }
 
@@ -83,7 +84,7 @@ body {
 .home-bar {
   /* border: #000000 solid 2px; */
   display: grid;
-  grid-template-columns: 150px 1fr 120px 150px;
+  grid-template-columns: 150px 1fr 120px 120px 120px 120px;
 }
 
 .home-img-text {
@@ -127,7 +128,7 @@ body {
 /*Quotes styling begins*/
 .launch-container {
   display: grid;
-  grid-template-rows: 50px 93px 510px 1fr 77px;
+  grid-template-rows: 50px 93px 70% 75px 77px;
   height: 100vh;
 }
 
@@ -148,7 +149,7 @@ body {
 }
 
 .launch-img {
-  width: 475px;
+  width: 430px;
   align-self: top;
   justify-self: center;
 }
@@ -157,7 +158,7 @@ body {
   display: grid;
   justify-content: center;
   align-content: center;
-  grid-template-columns: 1fr 30px 100px 30px 100px 30px 80px 30px 100px 1fr;
+  grid-template-columns: 1fr 400px 100px 1fr;
   font-family: 'Inter';
   font-size: 18px;
 }
@@ -197,4 +198,159 @@ body {
 .buttons {
   align-self: center;
   justify-self: center;
+  display: grid;
+  grid-template-columns: 30px 100px;
+  width: 130px;
+}
+
+.buttons p {
+  padding-left: 10px;
+}
+
+
+.link {
+  align-self:center;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-size: 16px;
+  text-align: center;
+  margin: 0px;
+  width: 100px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
+
+.link:hover {
+  background-color: #395375;
+  color: white;
+}
+
+.slider {
+  position: absolute;
+  left: -300px;
+  transition: 1s;
+  display: grid;
+  grid-template-columns: 300px 50px;
+  top: 25%;
+  height: 400px;
+  width: 350px;
+}
+
+.slider:hover {
+  transition: 1s;
+  left: 0;
+}
+
+.tab {
+  align-self: center;
+  height: 100px;
+  border-bottom: 50px solid transparent;
+  border-Top: 50px solid transparent;
+  border-left: 30px solid #395375;
+}
+
+.instruction-text {
+  background-color: #536f94;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.instruction-title {
+  font-family: Courier Prime;
+  font-size: 37px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.instruction-desc {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: inter;
+  font-size: 20px;
+  line-height: 30px;
+  color: white;
+}
+
+.input {
+  outline: none;
+  width: 400px;
+  font-size: 1.5em;
+  border: solid #395375 3px;
+  border-radius: 5px;
+  justify-self: center;
+  font-family: inter;
+}
+
+.submit-button {
+  height: 50px;
+  width: 100px;
+  align-self: center;
+  color: #395375;
+  background-color: white;
+  border:solid #395375 2px;
+  font-family: 'Inter';
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  border: none;
+  background-color: #395375;
+  color: white;
+}
+
+
+/* animation css */
+#container {
+  width: 500px;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  justify-self: center;
+  margin-bottom: 10px;
+}
+
+.static {
+  background: url("./assets/rolodex_static.gif");
+}
+
+.play {
+  background: url("./assets/rolodex-gif.gif");
+}
+
+.card {
+  width: 245px;
+  height: 125px;
+  margin-top: 50px;
+  margin-left: 102px;
+  border-radius: 5px;
+  /*border: #FFFFFF 2px solid;*/
+  background-color: #729cb3;
+  animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+.name {
+  padding-top: 55px;
+  padding-left: 10px;
+  margin: 0px;
+  font-size: 20px;
+}
+
+.quote {
+  margin: 0px;
+  padding-top: 5px;
+  padding-left: 10px;
+  color: #FFFFFF;
+  font-size: 10px;
 }
