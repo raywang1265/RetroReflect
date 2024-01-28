@@ -36,17 +36,12 @@ const Chart = () => {
         days = datadays;
         mood = datamood;
 
-        console.log(days);
-
         let temp = [];
 
         for(let i=0; i<days.length; i++) {
             temp.push({colour: mood[i], gr: Math.floor(days[i]/30+1), gc: i+2});
         }
         setMoodSquares(temp);
-
-        console.log(moodSquares);
-        
     } else {
         console.log("data not found");
     }

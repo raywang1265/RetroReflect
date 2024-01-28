@@ -128,7 +128,7 @@ body {
 /*Quotes styling begins*/
 .launch-container {
   display: grid;
-  grid-template-rows: 50px 93px 70% 75px 77px;
+  grid-template-rows: 50px 70px 70% 75px 77px;
   height: 100vh;
 }
 
@@ -237,10 +237,12 @@ body {
   border-radius: 5px;
   justify-self: center;
   font-family: inter;
+  margin-top: 10px;
 }
 
 .submit-button {
-  height: 50px;
+  margin-top: 10px;
+  height: 40px;
   width: 100px;
   align-self: center;
   color: #395375;
