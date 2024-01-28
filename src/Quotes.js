@@ -5,17 +5,21 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './index.css';
 import Card from './Card';
 
+//const puppeteer = require('puppeteer-extra');
+
 const Quotes = () => {
 
-    const [name, setName] = React.useState('name');
-    const [quote, setQuote] = React.useState('quote');
+    const [name, setName] = React.useState('Enter your thoughts');
+    const [quote, setQuote] = React.useState('To view some nostaglic quotes!');
     const [show, setShow] = React.useState(true);
 
-    const [nameArray, setNameArray] = React.useState(["loading", "test1", "test2"]);
-    const [quoteArray, setQuoteArray] = React.useState(["loading", "test1", "test2"]);
+    const [nameArray, setNameArray] = React.useState([""]);
+    const [quoteArray, setQuoteArray] = React.useState([""]);
+    const [moodScore, setMoodScore] = React.useState(0);
     const [index, setIndex] = React.useState(0);
 
     const [input, setInput] = React.useState('Note down your thoughts!');
+    const [searching, setSearching] = React.useState(false);
 
     // handleUserInput(e) {
     //     if(e.keyCode ==13) {
@@ -44,15 +48,32 @@ const Quotes = () => {
     //   }, [input]);
 
     const handleInput = () => {
-        handleAnimation();
+
+        if (!searching) {
+                setSearching(true);
+                setName("loading...");
+                setQuote("loading...");
+            fetch('http://localhost:8000/uofthacks', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({mood: input})
+            }).then(response => response.json()).then(responseJSON => {
+                setQuoteArray(responseJSON.similarList);
+                setNameArray(responseJSON.similarNameList);
+                setMoodScore(responseJSON.inputAnalysisScore);
+                console.log(nameArray);
+                console.log(quoteArray);
+                setName("Quotes are ready");
+                setQuote("Click to view your quotes!");
+                setSearching(false);
+            }).catch(error => console.log(error))
+        }
+
     }
 
     const handleAnimation = () => {
-
-        console.log(nameArray);
-        console.log(index);
-        setNameArray([input]);
-        setQuoteArray([input]);
 
         if(nameArray.length <= index+1) {
           setName(nameArray[index]);
@@ -100,7 +121,7 @@ const Quotes = () => {
                 <div className="tab"></div>
             </div>
 
-            <div id="container" className="static">
+            <div id="container" className="static" onClick={handleAnimation}>
         <Card nameField={name} quoteField={quote} show={show}/>
       </div>
 
