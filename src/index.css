@@ -154,59 +154,6 @@ body {
   justify-self: center;
 }
 
-.moods {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: 1fr 400px 100px 1fr;
-  font-family: 'Inter';
-  font-size: 18px;
-}
-
-.happy-square {
-  height: 30px;
-  width: 30px;
-  align-self: center;
-  justify-self: center;
-  background-color: yellow;
-}
-
-.neutral-square {
-  height: 30px;
-  width: 30px;
-  align-self: center;
-  justify-self: center;
-  background-color: purple;
-}
-
-.sad-square {
-  height: 30px;
-  width: 30px;
-  align-self: center;
-  justify-self: center;
-  background-color: blue;
-}
-
-.angry-square {
-  height: 30px;
-  width: 30px;
-  align-self: center;
-  justify-self: center;
-  background-color: red;
-}
-
-.buttons {
-  align-self: center;
-  justify-self: center;
-  display: grid;
-  grid-template-columns: 30px 100px;
-  width: 130px;
-}
-
-.buttons p {
-  padding-left: 10px;
-}
-
 
 .link {
   align-self:center;
@@ -220,6 +167,14 @@ body {
   padding-bottom: 16px;
 }
 
+.moods {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 1fr 400px 100px 1fr;
+  font-family: 'Inter';
+  font-size: 18px;
+}
 
 
 .link:hover {
@@ -411,9 +366,89 @@ body {
 }
 
 /* chart styling starts */
-.profile-container {
+.chart-container {
   display: grid;
-  grid-template-rows: 50px 50px 1fr 77px;
+  grid-template-rows: 50px 50px 50px 1fr 77px;
   height: 100vh;
+}
+
+.mood-container {
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: 1fr 150px 150px 150px 150px 150px 1fr;
+}
+
+.vnegative-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: #942222
+}
+
+.negative-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: #ab6129
+}
+
+.neutral-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: #ab8f29;
+}
+
+.positive-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: #29ab57;
+}
+
+.vpositive-square {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+  background-color: #2993ab;
+}
+
+.buttons {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 30px 100px;
+  width: 130px;
+}
+
+.buttons p {
+  padding-left: 10px;
+  font-family: inter;
+}
+
+.calendar {
+  display: grid;
+  margin-top: 45px;
+  width: 1050px;
+  height: 360px;
+  grid-template-rows: repeat(12, 30px);
+  grid-template-columns: repeat(30, 30px);
+  border: solid black 2px;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+}
+
+
+.month {
+  align-self: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
 }
 
