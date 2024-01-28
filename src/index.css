@@ -354,3 +354,66 @@ body {
   color: #FFFFFF;
   font-size: 10px;
 }
+
+/* profile styling starts */
+.profile-container {
+  display: grid;
+  grid-template-rows: 50px 50px 1fr 77px;
+  height: 100vh;
+}
+
+.profile-box {
+  margin: 0px;
+  border: solid black 2px;
+  width: 500px;
+  height: 450px;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-rows: 210px 75px 75px 75px;
+  background-color: #395375;
+}
+
+.user-picture {
+  width: 185px;
+  margin-top: 20px;
+  justify-self: center;
+  border-radius: 100%;
+  margin-bottom: 0px;
+}
+
+.profile-text {
+  font-family: inter;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+
+}
+
+.profile-info {
+  font-family: inter;
+  font-size: 19px;
+  color: white;
+  align-self: center;
+  padding-bottom: 12px;
+}
+
+.info-box {
+  margin-left: 25px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+.info-box-2 {
+  margin-left: 25px;
+  display: grid;
+  grid-template-columns: 75px 1fr;
+}
+
+/* chart styling starts */
+.profile-container {
+  display: grid;
+  grid-template-rows: 50px 50px 1fr 77px;
+  height: 100vh;
+}
+

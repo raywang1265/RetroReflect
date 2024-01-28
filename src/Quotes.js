@@ -4,11 +4,16 @@ import LogoutButton from "./LogoutButton";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './index.css';
 import Card from './Card';
+import { useAuth0 } from "@auth0/auth0-react";
+import { getFirestore, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import app from './index';
 
-//const puppeteer = require('puppeteer-extra');
+
 
 const Quotes = () => {
 
+    const { user, isAuthenticated} = useAuth0();
+    const db = getFirestore(app);
     const [name, setName] = React.useState('Enter your thoughts');
     const [quote, setQuote] = React.useState('To view some nostaglic quotes!');
     const [show, setShow] = React.useState(true);
@@ -63,11 +68,69 @@ const Quotes = () => {
                 setQuoteArray(responseJSON.similarList);
                 setNameArray(responseJSON.similarNameList);
                 setMoodScore(responseJSON.inputAnalysisScore);
+
                 console.log(nameArray);
                 console.log(quoteArray);
+                console.log(moodScore);
                 setName("Quotes are ready");
                 setQuote("Click to view your quotes!");
                 setSearching(false);
+
+                                    
+                let mood;
+
+                if (moodScore <= -5) {
+                    mood = "#942222";
+                } else if (moodScore > -5 && moodScore <= -3) {
+                    mood = "#ab6129";
+                } else if (moodScore > -3 && moodScore <= -1) {
+                    mood = "#ab8f29";
+                } else if (moodScore > -1 && moodScore <= 1) {
+                    mood = "#29ab57";
+                } else if (moodScore >= 3) {
+                    mood = "#2993ab";
+                }
+
+                let curDate = Math.round((Date.now() - new Date("01/01/2024")) / (1000 * 3600 * 24));
+
+                getDoc(doc(db, "Users", user?.sub)).then(docSnap => {
+                    if (docSnap.exists()) {
+                        console.log("Document data:", docSnap.data());
+
+                        if (!docSnap.data().days.includes(curDate)) {
+                            updateDoc(doc(db, "Users", user?.sub), {
+                                days: docSnap.data().day.push(curDate),
+                                mood: docSnap.data().day.push(mood)
+                            });
+                        }
+                    } else {
+                        console.log("creating new document for " + user?.name);
+                        setDoc(doc(db, "Users", user?.sub), {
+                            days: [curDate],
+                            mood: [mood],
+                        });
+    
+                    }
+                  })
+
+                // if (docSnap.exists()) {
+                //     console.log("Document data:", docSnap.data());
+
+                //     if (!docSnap.data().days.includes(curDate)) {
+                //         updateDoc(docRef, {
+                //             days: docSnap.data().day.push(curDate),
+                //             mood: docSnap.data().day.push(mood)
+                //         });
+                //     }
+
+                //   } else {
+                //     console.log("creating new document for " + user?.name);
+                //     setDoc(doc(db, "Users", user?.sub), {
+                //         days: [curDate],
+                //         mood: [mood],
+                //     });
+
+                //   }
             }).catch(error => console.log(error))
         }
 
