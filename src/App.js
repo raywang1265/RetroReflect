@@ -15,7 +15,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+
         {/* {isAuthenticated ? <Quotes></Quotes>: <Home />} */}
         {isAuthenticated ? 
           <Routes>
@@ -28,8 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
           </Routes>
         }
-      
-      </div>
+
     </Router>
     
 

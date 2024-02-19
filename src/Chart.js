@@ -16,10 +16,10 @@ const Chart = () => {
     let mood;
 
   //sample data
-  const testDays = [1, 2, 4, 5, 6, 7, 8, 10, 30, 41, 53, 59, 128, 189, 209, 305, 340]
-  const testMoods = ["#942222", "#ab6129", "#942222", "#29ab57", "#29ab57", "#942222", "#ab6129", "#942222", "#ab8f29", "#942222", "#ab8f29", "#ab6129", "#ab6129", "#ab6129", "#2993ab", "#2993ab", "#2993ab"]
+  const testDays = [1, 2, 4, 5, 6, 7, 8, 10,]// 30, 41, 53, 59, 128, 189, 209, 305, 340]
+  const testMoods = ["#942222", "#ab6129", "#942222", "#29ab57", "#29ab57", "#942222", "#ab6129", "#942222", ]//"#ab8f29", "#942222", "#ab8f29", "#ab6129", "#ab6129", "#ab6129", "#2993ab", "#2993ab", "#2993ab"]
   let squares = [];
-  for (let i=0; i<17; i++) {
+  for (let i=0; i<8; i++) {
     squares.push({colour: testMoods[i], gr: Math.floor(testDays[i]/30+1), gc: i+2});
   }
 
@@ -36,12 +36,17 @@ const Chart = () => {
         days = datadays;
         mood = datamood;
 
+        console.log(days);
+
         let temp = [];
 
         for(let i=0; i<days.length; i++) {
             temp.push({colour: mood[i], gr: Math.floor(days[i]/30+1), gc: i+2});
         }
         setMoodSquares(temp);
+
+        console.log(moodSquares);
+        
     } else {
         console.log("data not found");
     }
@@ -93,7 +98,7 @@ return (
             style={{gridRowStart: i+1, gridRowEnd: i+2, gridColumnStart: 1, gridColumnEnd: 2}}     
             >{m}</p>
         ))}
-        {moodSquares && moodSquares.map((s, i) => (
+        {squares && squares.map((s, i) => (
             <Square {...s} key={i}/>
         ))}
     </div>

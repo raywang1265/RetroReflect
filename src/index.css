@@ -15,11 +15,14 @@
 }
 body {
   margin: 0px;
-}
-
-.app {
   height: 100vh;
 }
+
+#root {
+  position: relative;
+  height: 100%;
+}
+
 
 /*Home styling begins*/
 
@@ -72,8 +75,9 @@ body {
 
 .home-container {
   display: grid;
-  grid-template-rows: 50px 93px 1fr 76% 1fr 76.5px;
+  grid-template-rows: 50px 93px 1fr 475px 1fr 76.5px;
   height: 100%;
+  /* border: solid 3px black; */
 }
 
 .home-top {
@@ -128,7 +132,7 @@ body {
 /*Quotes styling begins*/
 .launch-container {
   display: grid;
-  grid-template-rows: 50px 70px 70% 75px 77px;
+  grid-template-rows: 50px 70px 475px 75px 77px;
   height: 100vh;
 }
 
