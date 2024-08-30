@@ -12,7 +12,8 @@ const Chart = () => {
 //   const [days, setDays] = React.useState([]);
 //   const [mood, setMood] = React.useState([]);
     const [moodSquares, setMoodSquares] = React.useState([]);
-    let days;
+    let day;
+    let month;
     let mood;
 
   //sample data
@@ -30,22 +31,24 @@ const Chart = () => {
   getDoc(doc(db, "Users", user?.sub)).then(docSnap => {
     if (docSnap.exists()) {
 
-        const datadays = docSnap.data().days;
+        const dataday = docSnap.data().day;
+        const datamonth = docSnap.data().month;
         const datamood =docSnap.data().mood;
 
-        days = datadays;
+        day = dataday;
+        month = datamonth;
         mood = datamood;
 
-        console.log(days);
+        //console.log(days);
 
         let temp = [];
 
-        for(let i=0; i<days.length; i++) {
-            temp.push({colour: mood[i], gr: Math.floor(days[i]/30+1), gc: i+2});
+        for(let i=0; i<day.length; i++) {
+            temp.push({colour: mood[i], gr: month[i]+1, gc: day[i]+1});
         }
         setMoodSquares(temp);
 
-        console.log(moodSquares);
+        //console.log(moodSquares);
         
     } else {
         console.log("data not found");
@@ -98,7 +101,7 @@ return (
             style={{gridRowStart: i+1, gridRowEnd: i+2, gridColumnStart: 1, gridColumnEnd: 2}}     
             >{m}</p>
         ))}
-        {squares && squares.map((s, i) => (
+        {moodSquares && moodSquares.map((s, i) => (
             <Square {...s} key={i}/>
         ))}
     </div>

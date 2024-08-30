@@ -91,23 +91,31 @@ const Quotes = () => {
                     mood = "#2993ab";
                 }
 
-                let curDate = Math.round((Date.now() - new Date("01/01/2024")) / (1000 * 3600 * 24));
+                let curDateAbsolute = Math.round((Date.now() - new Date("01/01/2024")) / (1000 * 3600 * 24));
+                let curDate = new Date();
+                let month = curDate.getMonth();
+                let day = curDate.getDate();
+                let year = curDate.getFullYear();
 
                 getDoc(doc(db, "Users", user?.sub)).then(docSnap => {
                     if (docSnap.exists()) {
                         console.log("Document data:", docSnap.data());
 
-                        if (!docSnap.data().days.includes(curDate)) {
+                        if (!docSnap.data().days.includes(curDateAbsolute)) {
                             updateDoc(doc(db, "Users", user?.sub), {
-                                days: docSnap.data().day.push(curDate),
-                                mood: docSnap.data().day.push(mood)
+                                days: docSnap.data().days.push(curDateAbsolute),
+                                day: docSnap.data().day.push(day),
+                                month: docSnap.data().month.push(month),
+                                mood: docSnap.data().mood.push(mood)
                             });
                         }
                     } else {
                         console.log("creating new document for " + user?.name);
                         setDoc(doc(db, "Users", user?.sub), {
-                            days: [curDate],
-                            mood: [mood],
+                            days: [curDateAbsolute],
+                            day: [day],
+                            month: [month],
+                            mood: [mood]
                         });
     
                     }
@@ -185,6 +193,7 @@ const Quotes = () => {
             </div>
 
             <div id="container" className="static" onClick={handleAnimation}>
+
         <Card nameField={name} quoteField={quote} show={show}/>
       </div>
 

@@ -132,7 +132,7 @@ body {
 /*Quotes styling begins*/
 .launch-container {
   display: grid;
-  grid-template-rows: 50px 70px 475px 75px 77px;
+  grid-template-rows: 50px 70px 475px 1fr 77px;
   height: 100vh;
 }
 
@@ -443,7 +443,7 @@ body {
   width: 1050px;
   height: 360px;
   grid-template-rows: repeat(12, 30px);
-  grid-template-columns: repeat(30, 30px);
+  grid-template-columns: repeat(32, 30px);
   border: solid black 2px;
   align-self: center;
   justify-self: center;
